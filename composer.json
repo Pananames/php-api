@@ -1,0 +1,33 @@
+{
+	"name": "Pananames/api",
+	"version": "2.0.0",
+	"description": "PHP client for Pananames APIv2",
+	"keywords": [
+		"Pananames",
+		"Domains",
+		"Restful",
+		"php",
+		"sdk",
+		"api"
+	],
+	"homepage": "https://pananames.com",
+	"license": "proprietary",
+	"authors": [
+		{
+			"name": "URLSolutions Inc.",
+			"homepage": "https://github.com/Pananames/php-api"
+		}
+	],
+	"require": {
+		"php": ">=5.5",
+		"ext-json": "*",
+		"ext-mbstring": "*",
+		"guzzlehttp/guzzle": "^6.2"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^5.7"
+	},
+	"autoload": {
+		"psr-4": { "Pananames\\" : "lib/" }
+	}
+}
