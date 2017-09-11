@@ -1,5 +1,5 @@
 {
-	"name": "Pananames/api",
+	"name": "pananames/api",
 	"version": "2.0.0",
 	"description": "PHP client for Pananames APIv2",
 	"keywords": [
