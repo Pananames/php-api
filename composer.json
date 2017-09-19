@@ -1,6 +1,6 @@
 {
-	"name": "Pananames/api",
-	"version": "2.0.0",
+	"name": "pananames/api",
+	"version": "2.0.1",
 	"description": "PHP client for Pananames APIv2",
 	"keywords": [
 		"Pananames",
@@ -11,7 +11,7 @@
 		"api"
 	],
 	"homepage": "https://pananames.com",
-	"license": "proprietary",
+	"license": "MIT",
 	"authors": [
 		{
 			"name": "URLSolutions Inc.",
