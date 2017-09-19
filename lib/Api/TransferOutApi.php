@@ -12,10 +12,14 @@ class TransferOutApi extends ApiClient
 {
 	private $settings;
 
-	public function __construct($signature, $url = null)
+	public function __construct($signature, $url)
 	{
 		if (empty($signature)) {
 			throw new \InvalidArgumentException('Signature was not provided or was invalid.');
+		}
+
+		if (empty($url)) {
+			throw new \InvalidArgumentException('Url was not provided or was invalid.');
 		}
 
 		$this->settings['url'] = $url;

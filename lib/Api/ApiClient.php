@@ -16,14 +16,11 @@ use Pananames\Api\ObjectSerializer;
 
 abstract class ApiClient
 {
-	const URL = 'http://api-staging.pananames.com/merchant/v2';
 	const HEADER_ACCEPT = 'application/json';
 	const HEADER_CONTENT_TYPE = 'application/json';
 
-	public function sendRequest($method, $url, $data, $settings, $returnType = null)
+	public function sendRequest($method, $path, $data, $settings, $returnType = null)
 	{
-		$baseUrl = empty($settings['url']) ? self::URL : $settings['url'];
-
 		$query['headers'] = [
 			'Signature' => $settings['signature'],
 			'Accept' => self::HEADER_ACCEPT,
@@ -35,7 +32,7 @@ abstract class ApiClient
 		$client = new Client();
 
 		try {
-			$response = $client->request($method, $baseUrl . $url, $query);
+			$response = $client->request($method, $settings['url'] . $path, $query);
 
 			$body = $response->getBody()->getContents();
 			$content = empty($body) ? [] : json_decode($body);

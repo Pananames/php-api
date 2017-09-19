@@ -186,7 +186,7 @@ class NameServerRecordResponse
 			return false;
 		}
 
-		if ($httpCode != 204 && empty($this->getData())) {
+		if ($httpCode != 204 && is_null($this->getData())) {
 			return false;
 		}
 
