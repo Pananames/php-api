@@ -1,6 +1,6 @@
 <?php
 /**
- * DomainRedirectUpdateRequest
+ * DomainRedirectRequest
  *
  * PHP version >=5.5
  *
@@ -11,11 +11,11 @@
 namespace Pananames\Model;
 
 /**
- * DomainRedirectUpdateRequest Class Doc Comment
+ * DomainRedirectRequest Class Doc Comment
  *
  * @category    Class
  */
-class DomainRedirectUpdateRequest 
+class DomainRedirectRequest 
 {
 	const DISCRIMINATOR = null;
 
@@ -23,7 +23,7 @@ class DomainRedirectUpdateRequest
 		* The original name of the model.
 		* @var string
 		*/
-	protected static $swaggerModelName = 'DomainRedirectUpdateRequest';
+	protected static $swaggerModelName = 'DomainRedirectRequest';
 
 	/**
 		* Array of property to type mappings. Used for (de)serialization

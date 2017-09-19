@@ -251,7 +251,7 @@ class DomainsApi extends ApiClient
    *
    * Register a domain name.
    *
-   * @param \Pananames\Model\RegistrationData $data  (required)
+   * @param \Pananames\Model\RegistrationRequest $data  (required)
    * @return \Pananames\Model\DomainInfoResponse
    */
 	public function register($data)

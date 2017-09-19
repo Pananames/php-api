@@ -240,7 +240,7 @@ class NameServerRecord
 
 	/**
 	 * Sets id
-	 * @param int $id The unique identificator of ns record.
+	 * @param int $id The unique identificator of NS record.
 	 * @return $this
 	 */
 	public function setId($id)

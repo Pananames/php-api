@@ -209,7 +209,7 @@ class NameServersApi extends ApiClient
    * Set name servers.
    *
    * @param string $domain The name of the domain. (required)
-   * @param \Pananames\Model\NameServersUpdateRequest $name_servers  (required)
+   * @param \Pananames\Model\NameServersRequest $name_servers  (required)
    * @return \Pananames\Model\NameServersResponse
    */
 	public function setDnsServers($domain, $name_servers)

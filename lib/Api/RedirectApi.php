@@ -55,7 +55,7 @@ class RedirectApi extends ApiClient
    * Enable redirect.
    *
    * @param string $domain The name of the domain. (required)
-   * @param \Pananames\Model\DomainRedirectUpdateRequest $data  (required)
+   * @param \Pananames\Model\DomainRedirectRequest $data  (required)
    * @return \Pananames\Model\DomainRedirectResponse
    */
 	public function enable($domain, $data)

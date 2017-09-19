@@ -128,7 +128,7 @@ class WHOISApi extends ApiClient
    * Set WHOIS information.
    *
    * @param string $domain The name of the domain. (required)
-   * @param \Pananames\Model\WhoisInfoUpdateRequest $info  (required)
+   * @param \Pananames\Model\WhoisInfoRequest $info  (required)
    * @return \Pananames\Model\WhoisResponse
    */
 	public function setWhois($domain, $info)

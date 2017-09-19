@@ -1,6 +1,6 @@
 <?php
 /**
- * RegistrationData
+ * WhoisInfoRequest
  *
  * PHP version >=5.5
  *
@@ -11,11 +11,11 @@
 namespace Pananames\Model;
 
 /**
- * RegistrationData Class Doc Comment
+ * WhoisInfoRequest Class Doc Comment
  *
  * @category    Class
  */
-class RegistrationData 
+class WhoisInfoRequest 
 {
 	const DISCRIMINATOR = null;
 
@@ -23,22 +23,17 @@ class RegistrationData
 		* The original name of the model.
 		* @var string
 		*/
-	protected static $swaggerModelName = 'RegistrationData';
+	protected static $swaggerModelName = 'WhoisInfoRequest';
 
 	/**
 		* Array of property to type mappings. Used for (de)serialization
 		* @var string[]
 		*/
 	protected static $swaggerTypes = [
-		'domain' => 'string',
-		'period' => 'int',
-		'whois_privacy' => 'bool',
 		'registrant_contact' => '\Pananames\Model\Contact',
 		'admin_contact' => '\Pananames\Model\Contact',
 		'tech_contact' => '\Pananames\Model\Contact',
-		'billing_contact' => '\Pananames\Model\Contact',
-		'premium_price' => 'float',
-		'claims_accepted' => 'bool'
+		'billing_contact' => '\Pananames\Model\Contact'
 	];
 
 	/**
@@ -46,15 +41,10 @@ class RegistrationData
 		* @var string[]
 		*/
 	protected static $swaggerFormats = [
-		'domain' => null,
-		'period' => null,
-		'whois_privacy' => null,
 		'registrant_contact' => null,
 		'admin_contact' => null,
 		'tech_contact' => null,
-		'billing_contact' => null,
-		'premium_price' => 'float',
-		'claims_accepted' => null
+		'billing_contact' => null
 	];
 
 	public static function swaggerTypes()
@@ -72,15 +62,10 @@ class RegistrationData
 	 * @var string[]
 	 */
 	protected static $attributeMap = [
-		'domain' => 'domain',
-		'period' => 'period',
-		'whois_privacy' => 'whois_privacy',
 		'registrant_contact' => 'registrant_contact',
 		'admin_contact' => 'admin_contact',
 		'tech_contact' => 'tech_contact',
-		'billing_contact' => 'billing_contact',
-		'premium_price' => 'premium_price',
-		'claims_accepted' => 'claims_accepted'
+		'billing_contact' => 'billing_contact'
 	];
 
 	/**
@@ -88,15 +73,10 @@ class RegistrationData
 	 * @var string[]
 	 */
 	protected static $setters = [
-		'domain' => 'setDomain',
-		'period' => 'setPeriod',
-		'whois_privacy' => 'setWhoisPrivacy',
 		'registrant_contact' => 'setRegistrantContact',
 		'admin_contact' => 'setAdminContact',
 		'tech_contact' => 'setTechContact',
-		'billing_contact' => 'setBillingContact',
-		'premium_price' => 'setPremiumPrice',
-		'claims_accepted' => 'setClaimsAccepted'
+		'billing_contact' => 'setBillingContact'
 	];
 
 	/**
@@ -104,15 +84,10 @@ class RegistrationData
 	 * @var string[]
 	 */
 	protected static $getters = [
-		'domain' => 'getDomain',
-		'period' => 'getPeriod',
-		'whois_privacy' => 'getWhoisPrivacy',
 		'registrant_contact' => 'getRegistrantContact',
 		'admin_contact' => 'getAdminContact',
 		'tech_contact' => 'getTechContact',
-		'billing_contact' => 'getBillingContact',
-		'premium_price' => 'getPremiumPrice',
-		'claims_accepted' => 'getClaimsAccepted'
+		'billing_contact' => 'getBillingContact'
 	];
 
 	public static function attributeMap()
@@ -149,15 +124,10 @@ class RegistrationData
 	 */
 	public function __construct(array $data = null)
 	{
-		$this->container['domain'] = isset($data['domain']) ? $data['domain'] : null;
-		$this->container['period'] = isset($data['period']) ? $data['period'] : null;
-		$this->container['whois_privacy'] = isset($data['whois_privacy']) ? $data['whois_privacy'] : null;
 		$this->container['registrant_contact'] = isset($data['registrant_contact']) ? $data['registrant_contact'] : null;
 		$this->container['admin_contact'] = isset($data['admin_contact']) ? $data['admin_contact'] : null;
 		$this->container['tech_contact'] = isset($data['tech_contact']) ? $data['tech_contact'] : null;
 		$this->container['billing_contact'] = isset($data['billing_contact']) ? $data['billing_contact'] : null;
-		$this->container['premium_price'] = isset($data['premium_price']) ? $data['premium_price'] : null;
-		$this->container['claims_accepted'] = isset($data['claims_accepted']) ? $data['claims_accepted'] : null;
 	}
 
 	/**
@@ -169,15 +139,6 @@ class RegistrationData
 	{
 		$invalid_properties = [];
 
-		if ($this->container['domain'] === null) {
-			$invalid_properties[] = "'domain' can't be null";
-		}
-		if ($this->container['period'] === null) {
-			$invalid_properties[] = "'period' can't be null";
-		}
-		if ($this->container['whois_privacy'] === null) {
-			$invalid_properties[] = "'whois_privacy' can't be null";
-		}
 		if ($this->container['registrant_contact'] === null) {
 			$invalid_properties[] = "'registrant_contact' can't be null";
 		}
@@ -202,15 +163,6 @@ class RegistrationData
 	public function valid()
 	{
 
-		if ($this->container['domain'] === null) {
-			return false;
-		}
-		if ($this->container['period'] === null) {
-			return false;
-		}
-		if ($this->container['whois_privacy'] === null) {
-			return false;
-		}
 		if ($this->container['registrant_contact'] === null) {
 			return false;
 		}
@@ -225,69 +177,6 @@ class RegistrationData
 		}
 
 		return true;
-	}
-
-	/**
-	 * Gets domain
-	 * @return string
-	 */
-	public function getDomain()
-	{
-		return $this->container['domain'];
-	}
-
-	/**
-	 * Sets domain
-	 * @param string $domain
-	 * @return $this
-	 */
-	public function setDomain($domain)
-	{
-		$this->container['domain'] = $domain;
-
-		return $this;
-	}
-
-	/**
-	 * Gets period
-	 * @return int
-	 */
-	public function getPeriod()
-	{
-		return $this->container['period'];
-	}
-
-	/**
-	 * Sets period
-	 * @param int $period Registration period in years.
-	 * @return $this
-	 */
-	public function setPeriod($period)
-	{
-		$this->container['period'] = $period;
-
-		return $this;
-	}
-
-	/**
-	 * Gets whois_privacy
-	 * @return bool
-	 */
-	public function getWhoisPrivacy()
-	{
-		return $this->container['whois_privacy'];
-	}
-
-	/**
-	 * Sets whois_privacy
-	 * @param bool $whois_privacy If true WHOIS privacy protection will be enabled.
-	 * @return $this
-	 */
-	public function setWhoisPrivacy($whois_privacy)
-	{
-		$this->container['whois_privacy'] = $whois_privacy;
-
-		return $this;
 	}
 
 	/**
@@ -370,48 +259,6 @@ class RegistrationData
 	public function setBillingContact($billing_contact)
 	{
 		$this->container['billing_contact'] = $billing_contact;
-
-		return $this;
-	}
-
-	/**
-	 * Gets premium_price
-	 * @return float
-	 */
-	public function getPremiumPrice()
-	{
-		return $this->container['premium_price'];
-	}
-
-	/**
-	 * Sets premium_price
-	 * @param float $premium_price Price to register premium domain. Required for premium domains.
-	 * @return $this
-	 */
-	public function setPremiumPrice($premium_price)
-	{
-		$this->container['premium_price'] = $premium_price;
-
-		return $this;
-	}
-
-	/**
-	 * Gets claims_accepted
-	 * @return bool
-	 */
-	public function getClaimsAccepted()
-	{
-		return $this->container['claims_accepted'];
-	}
-
-	/**
-	 * Sets claims_accepted
-	 * @param bool $claims_accepted
-	 * @return $this
-	 */
-	public function setClaimsAccepted($claims_accepted)
-	{
-		$this->container['claims_accepted'] = $claims_accepted;
 
 		return $this;
 	}
