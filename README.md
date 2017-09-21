@@ -13,14 +13,8 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 
 ```
 {
-	"repositories": [
-		{
-			"type": "git",
-			"url": "https://github.com/Pananames/php-api.git"
-		}
-	],
 	"require": {
-		"Pananames/api": "*@dev"
+		"pananames/api": "^2.0"
 	}
 }
 ```
@@ -32,7 +26,7 @@ Then run `composer install`
 Download the files and include `autoload.php`:
 
 ```php
-require_once('/path/to//vendor/autoload.php');
+require_once(__DIR__ . '/vendor/autoload.php');
 ```
 
 ## Getting Started
@@ -45,7 +39,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 use Pananames\Api\DomainsApi;
 
-$domainsApi = new DomainsApi('SIGNATURE', 'URL' = '');
+$domainsApi = new DomainsApi('SIGNATURE', 'URL');
 
 $response = $domainsApi->check('domain-example.com');
 
@@ -58,7 +52,6 @@ if ($response->hasErrors()) {
 }
 
 $data = $response->getData();
-$meta = $response->getMeta();
 
 $httpCode = $response->getHttpCode();
 
@@ -72,4 +65,5 @@ $isPremium = $data->getPremium();
 
 ## Documentation
 
-[docs.pananames.com](https://docs.pananames.com/)
+- [Staging environment](https://docs-staging.pananames.com/)
+- [Production environment](https://docs.pananames.com/)
