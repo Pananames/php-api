@@ -27,7 +27,18 @@ abstract class ApiClient
 			'Content-type' => self::HEADER_CONTENT_TYPE
 		];
 
-		$query['body'] = empty($data) ? '' : json_encode(ObjectSerializer::sanitizeForSerialization($data));
+		$settings['url'] = rtrim($settings['url'], '/');
+		$data = ObjectSerializer::sanitizeForSerialization($data);
+
+		switch ($method) {
+			case 'GET':
+				$query['query'] = empty($data) ? '' : http_build_query($data);
+				break;
+
+			default:
+				$query['body'] = empty($data) ? '' : json_encode($data);
+				break;
+		}
 
 		$client = new Client();
 
