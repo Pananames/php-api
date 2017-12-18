@@ -175,6 +175,10 @@ class RegistrationRequest
 		if ($this->container['period'] === null) {
 			$invalid_properties[] = "'period' can't be null";
 		}
+		if (($this->container['period'] < 1)) {
+			$invalid_properties[] = "invalid value for 'period', must be bigger than or equal to 1.";
+		}
+
 		if ($this->container['whois_privacy'] === null) {
 			$invalid_properties[] = "'whois_privacy' can't be null";
 		}
@@ -206,6 +210,9 @@ class RegistrationRequest
 			return false;
 		}
 		if ($this->container['period'] === null) {
+			return false;
+		}
+		if ($this->container['period'] < 1) {
 			return false;
 		}
 		if ($this->container['whois_privacy'] === null) {
@@ -264,6 +271,11 @@ class RegistrationRequest
 	 */
 	public function setPeriod($period)
 	{
+
+		if (($period < 1)) {
+				throw new \InvalidArgumentException('invalid value for $period when calling RegistrationRequest., must be bigger than or equal to 1.');
+		}
+
 		$this->container['period'] = $period;
 
 		return $this;

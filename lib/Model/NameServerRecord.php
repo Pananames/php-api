@@ -30,7 +30,7 @@ class NameServerRecord
 		* @var string[]
 		*/
 	protected static $swaggerTypes = [
-		'id' => 'int',
+		'id' => 'string',
 		'name' => 'string',
 		'type' => 'string',
 		'value' => 'string',
@@ -194,9 +194,6 @@ class NameServerRecord
 		if ($this->container['value'] === null) {
 			$invalid_properties[] = "'value' can't be null";
 		}
-		if ($this->container['priority'] === null) {
-			$invalid_properties[] = "'priority' can't be null";
-		}
 		return $invalid_properties;
 	}
 
@@ -222,16 +219,13 @@ class NameServerRecord
 		if ($this->container['value'] === null) {
 			return false;
 		}
-		if ($this->container['priority'] === null) {
-			return false;
-		}
 
 		return true;
 	}
 
 	/**
 	 * Gets id
-	 * @return int
+	 * @return string
 	 */
 	public function getId()
 	{
@@ -240,7 +234,7 @@ class NameServerRecord
 
 	/**
 	 * Sets id
-	 * @param int $id The unique identificator of NS record.
+	 * @param string $id The unique identificator of NS record.
 	 * @return $this
 	 */
 	public function setId($id)

@@ -30,7 +30,7 @@ class NameServerRecordDeleteRequest
 		* @var string[]
 		*/
 	protected static $swaggerTypes = [
-		'id' => 'int'
+		'id' => 'string'
 	];
 
 	/**
@@ -145,7 +145,7 @@ class NameServerRecordDeleteRequest
 
 	/**
 	 * Gets id
-	 * @return int
+	 * @return string
 	 */
 	public function getId()
 	{
@@ -154,7 +154,7 @@ class NameServerRecordDeleteRequest
 
 	/**
 	 * Sets id
-	 * @param int $id
+	 * @param string $id
 	 * @return $this
 	 */
 	public function setId($id)

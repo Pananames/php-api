@@ -1,6 +1,6 @@
 <?php
 /**
- * NameServersUpdateRequest
+ * NameServersRequest
  *
  * PHP version >=5.5
  *
@@ -11,11 +11,11 @@
 namespace Pananames\Model;
 
 /**
- * NameServersUpdateRequest Class Doc Comment
+ * NameServersRequest Class Doc Comment
  *
  * @category    Class
  */
-class NameServersUpdateRequest 
+class NameServersRequest 
 {
 	const DISCRIMINATOR = null;
 
@@ -23,7 +23,7 @@ class NameServersUpdateRequest
 		* The original name of the model.
 		* @var string
 		*/
-	protected static $swaggerModelName = 'NameServersUpdateRequest';
+	protected static $swaggerModelName = 'NameServersRequest';
 
 	/**
 		* Array of property to type mappings. Used for (de)serialization
