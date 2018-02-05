@@ -116,6 +116,7 @@ class NameServerRecord
 	}
 	const TYPE_A = 'A';
 	const TYPE_AAAA = 'AAAA';
+	const TYPE_ALIAS = 'ALIAS';
 	const TYPE_CNAME = 'CNAME';
 	const TYPE_NS = 'NS';
 	const TYPE_MX = 'MX';
@@ -133,6 +134,7 @@ class NameServerRecord
 		return [
 			self::TYPE_A,
 			self::TYPE_AAAA,
+			self::TYPE_ALIAS,
 			self::TYPE_CNAME,
 			self::TYPE_NS,
 			self::TYPE_MX,
