@@ -27,6 +27,32 @@ class DomainsApi extends ApiClient
 	}
 
   /**
+   * Function bulkCheck
+   *
+   * Bulk check the domains availability.
+   *
+   * @param string[] $domains Array of domains. (optional)
+   * @return \Pananames\Model\BulkCheckResponse
+   */
+	public function bulkCheck($domains = null)
+	{
+		if (!empty($domains) && count($domains) > 500) {
+			throw new \InvalidArgumentException('Invalid value for "$domains" when calling DomainsApi.bulkCheck, number of items must be less than or equal to 500.');
+		}
+		if (!empty($domains) && count($domains) < 1) {
+			throw new \InvalidArgumentException('Invalid value for "$domains" when calling DomainsApi.bulkCheck, number of items must be greater than or equal to 1.');
+		}
+		$url = '/domains/bulk_check';
+		if (!empty($domains)) {
+			$data['domains'] = ObjectSerializer::toQueryValue($domains);
+		}
+
+		$returnType = '\Pananames\Model\BulkCheckResponse';
+
+		return $this->sendRequest('GET', $url, $data, $this->settings, $returnType);
+	}
+
+  /**
    * Function check
    *
    * Check the domain availability.

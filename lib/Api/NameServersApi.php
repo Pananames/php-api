@@ -135,6 +135,29 @@ class NameServersApi extends ApiClient
 	}
 
   /**
+   * Function deleteDnsServers
+   *
+   * Delete name servers.
+   *
+   * @param string $domain The name of the domain. (required)
+   * @return \Pananames\Model\EmptyResponse
+   */
+	public function deleteDnsServers($domain)
+	{
+		if (empty($domain)) {
+			throw new \InvalidArgumentException('Missing the required parameter $domain when calling deleteDnsServers');
+		}
+		if (strlen($domain) < 3) {
+			throw new \InvalidArgumentException('Invalid length for "$domain" when calling NameServersApi.deleteDnsServers, must be bigger than or equal to 3.');
+		}
+		$url = str_replace('{'.'domain'.'}', ObjectSerializer::toPathValue($domain), '/domains/{domain}/name_servers');
+
+		$returnType = '\Pananames\Model\EmptyResponse';
+
+		return $this->sendRequest('DELETE', $url, [], $this->settings, $returnType);
+	}
+
+  /**
    * Function getChildDns
    *
    * Get child name servers.

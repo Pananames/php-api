@@ -31,6 +31,7 @@ class DomainInfo
 		*/
 	protected static $swaggerTypes = [
 		'domain' => 'string',
+		'domain_idn' => 'string',
 		'premium' => 'bool',
 		'auto_renew' => 'bool',
 		'whois_privacy' => 'bool',
@@ -48,6 +49,7 @@ class DomainInfo
 		*/
 	protected static $swaggerFormats = [
 		'domain' => null,
+		'domain_idn' => null,
 		'premium' => null,
 		'auto_renew' => null,
 		'whois_privacy' => null,
@@ -75,6 +77,7 @@ class DomainInfo
 	 */
 	protected static $attributeMap = [
 		'domain' => 'domain',
+		'domain_idn' => 'domain_idn',
 		'premium' => 'premium',
 		'auto_renew' => 'auto_renew',
 		'whois_privacy' => 'whois_privacy',
@@ -92,6 +95,7 @@ class DomainInfo
 	 */
 	protected static $setters = [
 		'domain' => 'setDomain',
+		'domain_idn' => 'setDomainIdn',
 		'premium' => 'setPremium',
 		'auto_renew' => 'setAutoRenew',
 		'whois_privacy' => 'setWhoisPrivacy',
@@ -109,6 +113,7 @@ class DomainInfo
 	 */
 	protected static $getters = [
 		'domain' => 'getDomain',
+		'domain_idn' => 'getDomainIdn',
 		'premium' => 'getPremium',
 		'auto_renew' => 'getAutoRenew',
 		'whois_privacy' => 'getWhoisPrivacy',
@@ -199,6 +204,7 @@ class DomainInfo
 	public function __construct(array $data = null)
 	{
 		$this->container['domain'] = isset($data['domain']) ? $data['domain'] : null;
+		$this->container['domain_idn'] = isset($data['domain_idn']) ? $data['domain_idn'] : null;
 		$this->container['premium'] = isset($data['premium']) ? $data['premium'] : null;
 		$this->container['auto_renew'] = isset($data['auto_renew']) ? $data['auto_renew'] : null;
 		$this->container['whois_privacy'] = isset($data['whois_privacy']) ? $data['whois_privacy'] : null;
@@ -330,6 +336,27 @@ class DomainInfo
 	public function setDomain($domain)
 	{
 		$this->container['domain'] = $domain;
+
+		return $this;
+	}
+
+	/**
+	 * Gets domain_idn
+	 * @return string
+	 */
+	public function getDomainIdn()
+	{
+		return $this->container['domain_idn'];
+	}
+
+	/**
+	 * Sets domain_idn
+	 * @param string $domain_idn
+	 * @return $this
+	 */
+	public function setDomainIdn($domain_idn)
+	{
+		$this->container['domain_idn'] = $domain_idn;
 
 		return $this;
 	}

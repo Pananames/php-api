@@ -31,6 +31,7 @@ class CheckInfo
 		*/
 	protected static $swaggerTypes = [
 		'domain' => 'string',
+		'domain_idn' => 'string',
 		'available' => 'bool',
 		'premium' => 'bool',
 		'prices' => '\Pananames\Model\Prices',
@@ -44,6 +45,7 @@ class CheckInfo
 		*/
 	protected static $swaggerFormats = [
 		'domain' => null,
+		'domain_idn' => null,
 		'available' => null,
 		'premium' => null,
 		'prices' => null,
@@ -67,6 +69,7 @@ class CheckInfo
 	 */
 	protected static $attributeMap = [
 		'domain' => 'domain',
+		'domain_idn' => 'domain_idn',
 		'available' => 'available',
 		'premium' => 'premium',
 		'prices' => 'prices',
@@ -80,6 +83,7 @@ class CheckInfo
 	 */
 	protected static $setters = [
 		'domain' => 'setDomain',
+		'domain_idn' => 'setDomainIdn',
 		'available' => 'setAvailable',
 		'premium' => 'setPremium',
 		'prices' => 'setPrices',
@@ -93,6 +97,7 @@ class CheckInfo
 	 */
 	protected static $getters = [
 		'domain' => 'getDomain',
+		'domain_idn' => 'getDomainIdn',
 		'available' => 'getAvailable',
 		'premium' => 'getPremium',
 		'prices' => 'getPrices',
@@ -135,6 +140,7 @@ class CheckInfo
 	public function __construct(array $data = null)
 	{
 		$this->container['domain'] = isset($data['domain']) ? $data['domain'] : null;
+		$this->container['domain_idn'] = isset($data['domain_idn']) ? $data['domain_idn'] : null;
 		$this->container['available'] = isset($data['available']) ? $data['available'] : null;
 		$this->container['premium'] = isset($data['premium']) ? $data['premium'] : null;
 		$this->container['prices'] = isset($data['prices']) ? $data['prices'] : null;
@@ -214,6 +220,27 @@ class CheckInfo
 	public function setDomain($domain)
 	{
 		$this->container['domain'] = $domain;
+
+		return $this;
+	}
+
+	/**
+	 * Gets domain_idn
+	 * @return string
+	 */
+	public function getDomainIdn()
+	{
+		return $this->container['domain_idn'];
+	}
+
+	/**
+	 * Sets domain_idn
+	 * @param string $domain_idn
+	 * @return $this
+	 */
+	public function setDomainIdn($domain_idn)
+	{
+		$this->container['domain_idn'] = $domain_idn;
 
 		return $this;
 	}
